@@ -32,7 +32,9 @@ public class BT<T> extends BTNode<T>{
                     BTNode<T> current = queue.dequeue();
 
                     System.out.println("K = " +current.info + " level = " + height);
-                    if (current.left != null) {
+                    if (current.left != null) 
+                    
+                    {
                         queue.enqueue(current.left);
                     }
                     if (current.right != null) {
@@ -50,6 +52,6 @@ public class BT<T> extends BTNode<T>{
         if(height == -1)
             return "ht = undefined (tree is empty.)";
         else
-            return "ht = " + (--height) + " " + root.toString();
+            return "ht = " + --height + " " + root.toString();
     }
 }
