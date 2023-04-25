@@ -72,7 +72,8 @@ public class LabEx4{
                     // If found, print the node and its level
                     System.out.println("Node found: " + search + " Level: " + foundNode.level);
                     System.out.print(((Object) foundNode) );
-                } else {
+                } 
+                else {
                     // If not found, print the searched info and say that it is not found
                     System.out.println("Node not found: " + search);
                 }
