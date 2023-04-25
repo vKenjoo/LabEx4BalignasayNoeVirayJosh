@@ -58,13 +58,13 @@ public class BTNode<T>{
     {
         String toStringValue = "";
         toStringValue += "[";
-        toStringValue += ("K = " + info.toString());
+        toStringValue += ("K=" + info.toString());
         if(left != null){
-            toStringValue += " L = ";
+            toStringValue += " L=";
             toStringValue += left.toString(); 
         }
         if(right != null){
-            toStringValue += " R = ";
+            toStringValue += " R=";
             toStringValue += right.toString();
         }
         toStringValue += "]";
