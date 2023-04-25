@@ -7,14 +7,11 @@ public class BT<T>
         root = null;
     }
 
-    public int height(BTNode<T> node) 
-    {
-        if (node == null) 
-        {
+    public int height(BTNode<T> node) {
+        if (node == null){
             height = 0;
         } 
-        else 
-        {
+        else {
             int leftHeight = height(node.left);
             int rightHeight = height(node.right);
 
@@ -30,4 +27,11 @@ public class BT<T>
         return height;
     }
 
+    //to do
+    public void setRoot(BTNode<Integer> node3) {
+    }
+
+    // to do
+    public void computeLevels() {
+    }
 }

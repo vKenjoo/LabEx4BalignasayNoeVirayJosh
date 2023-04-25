@@ -31,12 +31,12 @@ public class LabEx4{
             node1.right = node2;
             node5.left = node4;
 
-            t2.setRoot(node6);
-            node6.left = node7;
-            node6.right = node8;
-            node7.left = node9;
-            node7.right = node10;
-            node8.right = node11;
+            // t2.setRoot(node6);
+            // node6.left = node7;
+            // node6.right = node8;
+            // node7.left = node9;
+            // node7.right = node10;
+            // node8.right = node11;
 
             // Print trees
             System.out.println("Tree t0:");
