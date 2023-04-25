@@ -48,7 +48,7 @@ public class LabEx4{
             System.out.println(t1.toString());
 
             System.out.println("Tree t2:");
-            t2.computeLevels();
+            // t2.computeLevels();
             System.out.println(t2.toString());
         }
 
