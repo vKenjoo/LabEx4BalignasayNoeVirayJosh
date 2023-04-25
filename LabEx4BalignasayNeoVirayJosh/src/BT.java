@@ -20,38 +20,39 @@ public class BT<T> extends BTNode<T>{
         if (root == null) {
             height = -1;
         }
+        else{
+            height = -1;
+            boolean hasChildNodes = true;
 
-        int height = -1;
-        boolean hasChildNodes = true;
+            while (hasChildNodes) {
+                hasChildNodes = false;
+                BTNode<T> currentNode = root;
+                BTNode<T> leftMostNode = null;
 
-        while (hasChildNodes) {
-            hasChildNodes = false;
-            BTNode<T> currentNode = root;
-            BTNode<T> leftMostNode = null;
-
-            while (currentNode != null) {
-                if (currentNode.left != null) {
-                    hasChildNodes = true;
-                    if (leftMostNode == null) {
-                        leftMostNode = currentNode.left;
+                while (currentNode != null) {
+                    if (currentNode.left != null) {
+                        hasChildNodes = true;
+                        if (leftMostNode == null) {
+                            leftMostNode = currentNode.left;
+                        }
                     }
+
+                    if (currentNode.right != null) {
+                        hasChildNodes = true;
+                        if (leftMostNode == null) {
+                            leftMostNode = currentNode.right;
+                        }
+                    }
+
+                    currentNode = currentNode.left;
                 }
 
-                if (currentNode.right != null) {
-                    hasChildNodes = true;
-                    if (leftMostNode == null) {
-                        leftMostNode = currentNode.right;
-                    }
+                if (hasChildNodes) {
+                    root = leftMostNode;
                 }
 
-                currentNode = currentNode.left;
+                height++;
             }
-
-            if (hasChildNodes) {
-                root = leftMostNode;
-            }
-
-            height++;
         }
     }
 
