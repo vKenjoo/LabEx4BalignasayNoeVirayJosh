@@ -4,7 +4,7 @@ ICS2605
 1CSF
 Lab Exercise 4 */
 
-public class BT<T>
+public class BT<T> extends BTNode<T>
 {
     BTNode<T> root;
     int height;
@@ -14,18 +14,26 @@ public class BT<T>
         root = null;
     }
 
-    public int height(BTNode<T> node) {
-        if (node == null){
+    public void setRoot(BTNode<T> n)
+    {
+        root = n;
+    }
+
+    public int height(BTNode<T> node) 
+    {
+        if (node == null) 
+        {
             height = 0;
-        } 
-        else {
+        }
+        else 
+        {
             int leftHeight = height(node.left);
             int rightHeight = height(node.right);
 
             if (leftHeight > rightHeight) 
             {
                 height = leftHeight + 1;
-            } 
+            }
             else 
             {
                 height = rightHeight + 1;
@@ -34,11 +42,20 @@ public class BT<T>
         return height;
     }
 
-    //to do
-    public void setRoot(BTNode<Integer> node3) {
-    }
-
-    // to do
-    public void computeLevels() {
+    public String toString()
+    {
+        String toStringValue = "";
+        toStringValue += "[";
+        toStringValue += ("K = " + root.info.toString());
+        if(left != null){
+            toStringValue += " L = ";
+            toStringValue += root.left.toString(); 
+        }
+        if(right != null){
+            toStringValue += " R = ";
+            toStringValue += root.right.toString();
+        }
+        toStringValue += "]";
+        return toStringValue;
     }
 }
