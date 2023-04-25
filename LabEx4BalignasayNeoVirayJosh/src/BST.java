@@ -1,3 +1,9 @@
+// Balignasay, Neo Genesis
+// Viray, Josh Kenn
+// ICS2605
+// 1CSF
+// Lab Exercise 4 
+
 class BST<K extends Comparable<K>> extends BT<K> {
     // Insert method to add a new node with key k into the BST
     public void insert(K k) {
