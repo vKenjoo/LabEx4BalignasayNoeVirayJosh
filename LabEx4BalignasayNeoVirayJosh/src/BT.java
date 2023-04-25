@@ -22,18 +22,22 @@ public class BT<T> extends BTNode<T>{
             height = 0;
         }
 
-        Queue<BTNode<T>> queue = new Queue<BTNode<T>>(100);
-        queue.enqueue(root);
+        else
+        {
+            Queue<BTNode<T>> queue = new Queue<BTNode<T>>(100);
+            queue.enqueue(root);
 
-        while (!queue.isEmpty()) {
-            BTNode<T> curr = queue.dequeue();
-            height++;
+            while (!queue.isEmpty()) 
+            {
+                BTNode<T> curr = queue.dequeue();
+                height++;
 
-            if (curr.left != null) {
-                queue.enqueue(curr.left);
-            }
-            if (curr.right != null) {
-                queue.enqueue(curr.right);
+                if (curr.left != null) {
+                    queue.enqueue(curr.left);
+                }
+                if (curr.right != null) {
+                    queue.enqueue(curr.right);
+                }
             }
         }
     }
