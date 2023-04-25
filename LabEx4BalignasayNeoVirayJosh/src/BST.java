@@ -70,4 +70,7 @@ class BST<K extends Comparable<K>> extends BT<K> {
         // If k is not found, return null
         return null;
     }
+
+    public void print() {
+    }
 }
