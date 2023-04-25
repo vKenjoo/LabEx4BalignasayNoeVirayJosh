@@ -1,6 +1,6 @@
 public class LinkedList<T> {
-    private Node<T> head;
-    private int size;
+    Node<T> head;
+    int size;
 
     public LinkedList() {
         head = null;
@@ -71,9 +71,9 @@ public class LinkedList<T> {
         return sb.toString();
     }
 
-    private static class Node<T> {
-        private T value;
-        private Node<T> next;
+    public static class Node<T> {
+        T value;
+        Node<T> next;
 
         public Node(T value) {
             this.value = value;
@@ -91,9 +91,5 @@ public class LinkedList<T> {
         public void setNext(Node<T> next) {
             this.next = next;
         }
-    }
-
-    public BTNode<T> poll() {
-        return null;
     }
 }
