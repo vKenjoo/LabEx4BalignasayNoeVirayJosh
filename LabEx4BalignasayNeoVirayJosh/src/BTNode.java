@@ -1,8 +1,8 @@
-// Balignasay, Neo Genesis
-// Viray, Josh Kenn
-// ICS2605
-// 1CSF
-// Lab Exercise 4 
+/*Balignasay, Neo Genesis
+Viray, Josh Kenn
+ICS2605
+1CSF
+Lab Exercise 4 */
 
 public class BTNode<T>{
     // Constructors
@@ -27,13 +27,13 @@ public class BTNode<T>{
         right = rightChild;
         info = data;
     }
-
     //Debug Setters and getters
-    public T getData() {
+
+    public T info() {
         return info;
     }
 
-    public void setData(T data) {
+    public void setInfo(T data) {
         this.info = data;
     }
 
@@ -54,7 +54,8 @@ public class BTNode<T>{
     }
 
     // toString
-    public String toString(){
+    public String toString()
+    {
         String toStringValue = "";
         toStringValue += "[";
         toStringValue += ("K = " + info.toString());

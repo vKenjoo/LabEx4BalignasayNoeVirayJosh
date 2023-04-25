@@ -48,36 +48,8 @@ public class LabEx4{
             System.out.println(t1);
 
             System.out.println("Tree t2:");
-            t2.computeLevels();
+            // t2.computeLevels();
             System.out.println(t2);
-        }
-        if (t == 2){
-            BST<String> bst1 = new BST<>();
-
-            // Call insert for each of the following info values to insert them into bst1
-            String[] infoValues = {"L", "C", "G", "K", "X", "H", "Q", "U", "W", "P", "M", "E"};
-            for (String info : infoValues) {
-                bst1.insert(info);
-            }
-
-            // Print bst1
-            System.out.println("bst1: ");
-            bst1.print();
-
-            // Call search for each of the following info values in bst1
-            String[] searchValues = {"A", "Q", "N", "L", "E", "C", "R"};
-            for (String search : searchValues) {
-                BTNode<String> foundNode = bst1.search(search);
-                if (foundNode != null) {
-                    // If found, print the node and its level
-                    System.out.println("Node found: " + search + " Level: " + foundNode.level);
-                    System.out.print(((Object) foundNode) );
-                } 
-                else {
-                    // If not found, print the searched info and say that it is not found
-                    System.out.println("Node not found: " + search);
-                }
-            }
         }
     }
 }

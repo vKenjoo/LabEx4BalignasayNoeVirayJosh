@@ -19,7 +19,7 @@ public class BT<T> extends BTNode<T>
         root = n;
     }
 
-    public String breadthFirstTraversal() {
+    public String computeLevels() {
         StringBuilder sb = new StringBuilder();
         if (root == null) {
             return sb.toString();
@@ -45,6 +45,9 @@ public class BT<T> extends BTNode<T>
 
     public String toString()
     {
-        return "h = " + height + " " + root.toString();
+        if(root.left == null && root.right == null)
+            return "Tree is null";
+        else
+            return "h = " + height + " " + root.toString();
     }
 }
