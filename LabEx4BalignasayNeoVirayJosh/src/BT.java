@@ -16,10 +16,10 @@ public class BT<T> extends BTNode<T>{
         root = n;
     }
 
-    public String computeLevels() {
+    public void computeLevels() {
         StringBuilder sb = new StringBuilder();
         if (root == null) {
-            return sb.toString();
+            height = 0;
         }
 
         Queue<BTNode<T>> queue = new Queue<BTNode<T>>(100);
@@ -27,7 +27,7 @@ public class BT<T> extends BTNode<T>{
 
         while (!queue.isEmpty()) {
             BTNode<T> curr = queue.dequeue();
-            sb.append(curr.info).append(",");
+            height++;
 
             if (curr.left != null) {
                 queue.enqueue(curr.left);
@@ -36,7 +36,6 @@ public class BT<T> extends BTNode<T>{
                 queue.enqueue(curr.right);
             }
         }
-        return sb.toString();
     }
 
     public String toString()

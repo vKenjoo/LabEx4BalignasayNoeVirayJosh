@@ -41,15 +41,15 @@ public class LabEx4{
             // Print trees
             System.out.println("Tree t0:");
             t0.computeLevels();
-            System.out.println(t0);
+            System.out.println(t0.toString());
 
             System.out.println("Tree t1:");
             t1.computeLevels();
-            System.out.println(t1);
+            System.out.println(t1.toString());
 
             System.out.println("Tree t2:");
             // t2.computeLevels();
-            System.out.println(t2);
+            System.out.println(t2.toString());
         }
     }
 }
