@@ -84,7 +84,7 @@ public class LabEx4{
             for (String info : infoValues) {
                 bst1.insert(info);
             }
-
+            
             // Print bst1
             System.out.println("The contents of BST1 is: ");
             System.out.println(bst1.toString());
