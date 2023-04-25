@@ -19,43 +19,32 @@ public class BT<T> extends BTNode<T>
         root = n;
     }
 
-    public int height(BTNode<T> node) 
-    {
-        if (node == null) 
-        {
-            height = 0;
+    public String breadthFirstTraversal() {
+        StringBuilder sb = new StringBuilder();
+        if (root == null) {
+            return sb.toString();
         }
-        else 
-        {
-            int leftHeight = height(node.left);
-            int rightHeight = height(node.right);
 
-            if (leftHeight > rightHeight) 
-            {
-                height = leftHeight + 1;
+        Queue<BTNode<T>> queue = new Queue<BTNode<T>>(100);
+        queue.enqueue(root);
+
+        while (!queue.isEmpty()) {
+            BTNode<T> curr = queue.dequeue();
+            sb.append(curr.info).append(",");
+
+            if (curr.left != null) {
+                queue.enqueue(curr.left);
             }
-            else 
-            {
-                height = rightHeight + 1;
+            if (curr.right != null) {
+                queue.enqueue(curr.right);
             }
         }
-        return height;
+
+        return sb.toString();
     }
 
     public String toString()
     {
-        String toStringValue = "";
-        toStringValue += "[";
-        toStringValue += ("K = " + root.info.toString());
-        if(left != null){
-            toStringValue += " L = ";
-            toStringValue += root.left.toString(); 
-        }
-        if(right != null){
-            toStringValue += " R = ";
-            toStringValue += root.right.toString();
-        }
-        toStringValue += "]";
-        return toStringValue;
+        return "h = " + height + " " + root.toString();
     }
 }
