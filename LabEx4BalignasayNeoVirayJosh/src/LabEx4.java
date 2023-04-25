@@ -7,5 +7,4 @@ Lab Exercise 4 */
 public class LabEx4
 {
 
-
 }
