@@ -27,8 +27,8 @@ public class BTNode<T>{
         right = rightChild;
         info = data;
     }
+    
     //Debug Setters and getters
-
     public T getData() {
         return info;
     }
