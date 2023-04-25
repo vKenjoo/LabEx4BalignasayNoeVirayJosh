@@ -16,27 +16,30 @@ public class BT<T> extends BTNode<T>{
         root = n;
     }
 
-    public String computeLevels() {
+    public void computeLevels() {
         StringBuilder sb = new StringBuilder();
         if (root == null) {
-            return sb.toString();
+            height = 0;
         }
 
-        Queue<BTNode<T>> queue = new Queue<BTNode<T>>(100);
-        queue.enqueue(root);
+        else
+        {
+            Queue<BTNode<T>> queue = new Queue<BTNode<T>>(100);
+            queue.enqueue(root);
 
-        while (!queue.isEmpty()) {
-            BTNode<T> curr = queue.dequeue();
-            sb.append(curr.info).append(",");
+            while (!queue.isEmpty()) 
+            {
+                BTNode<T> curr = queue.dequeue();
+                height++;
 
-            if (curr.left != null) {
-                queue.enqueue(curr.left);
-            }
-            if (curr.right != null) {
-                queue.enqueue(curr.right);
+                if (curr.left != null) {
+                    queue.enqueue(curr.left);
+                }
+                if (curr.right != null) {
+                    queue.enqueue(curr.right);
+                }
             }
         }
-        return sb.toString();
     }
 
     public String toString()
@@ -44,6 +47,6 @@ public class BT<T> extends BTNode<T>{
         if(root == null)
             return "Tree is null";
         else
-            return "h = " + height + " " + root.toString();
+            return "ht = " + height + " " + root.toString();
     }
 }
