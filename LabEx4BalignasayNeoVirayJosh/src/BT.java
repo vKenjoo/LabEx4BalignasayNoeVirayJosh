@@ -12,8 +12,8 @@ public class BT<T> extends BTNode<T>{
         root = null;
     }
 
-    public void setRoot(Object node6){
-        root = node6;
+    public void setRoot(BTNode<T> n){
+        root = n;
     }
 
     public void computeLevels() {
