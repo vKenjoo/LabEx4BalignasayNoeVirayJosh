@@ -20,38 +20,27 @@ public class BT<T> extends BTNode<T>{
         if (root == null) {
             height = -1;
         }
-        else{
-            height = -1;
-            boolean hasChildNodes = true;
+        else {
+            
+            height = 0;
 
-            while (hasChildNodes) {
-                hasChildNodes = false;
-                BTNode<T> currentNode = root;
-                BTNode<T> leftMostNode = null;
-
-                while (currentNode != null) {
-                    if (currentNode.left != null) {
-                        hasChildNodes = true;
-                        if (leftMostNode == null) {
-                            leftMostNode = currentNode.left;
-                        }
-                    }
-
-                    if (currentNode.right != null) {
-                        hasChildNodes = true;
-                        if (leftMostNode == null) {
-                            leftMostNode = currentNode.right;
-                        }
-                    }
-
-                    currentNode = currentNode.left;
+            Queue<BTNode<T>> queue = new Queue<>(100);
+            queue.enqueue(root);
+        
+            while (!queue.isEmpty()) {
+                BTNode<T> currNode = queue.dequeue();
+        
+                if (currNode.left != null) {
+                    queue.enqueue(currNode.left);
                 }
-
-                if (hasChildNodes) {
-                    root = leftMostNode;
+        
+                if (currNode.right != null) {
+                    queue.enqueue(currNode.right);
                 }
-
-                height++;
+        
+                if (queue.isEmpty()) {
+                    height++;
+                }
             }
         }
     }
