@@ -44,6 +44,6 @@ public class BT<T> extends BTNode<T>{
         if(root == null)
             return "Tree is null";
         else
-            return "h = " + height + " " + root.toString();
+            return "ht = " + height + " " + root.toString();
     }
 }
