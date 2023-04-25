@@ -1,10 +1,22 @@
+/*Balignasay, Neo Genesis
+Viray, Josh Kenn
+ICS2605
+1CSF
+Lab Exercise 4 */
+
 public class BT<T>
 {
     BTNode<T> root;
     int height;
 
-    public BT() {
+    public BT() 
+    {
         root = null;
+    }
+
+    public void setRoot(BTNode<T> n)
+    {
+        root = n;
     }
 
     public int height(BTNode<T> node) 
@@ -12,7 +24,7 @@ public class BT<T>
         if (node == null) 
         {
             height = 0;
-        } 
+        }
         else 
         {
             int leftHeight = height(node.left);
