@@ -31,6 +31,7 @@ public class LabEx4{
             node1.right = node2;
             node5.left = node4;
 
+            // Tree 2
             BTNode<Character> nodeB = new BTNode<>('B');
             BTNode<Character> nodeC = new BTNode<>('C');
             BTNode<Character> nodeL = new BTNode<>('L');
