@@ -1,9 +1,16 @@
+/*Balignasay, Neo Genesis
+Viray, Josh Kenn
+ICS2605
+1CSF
+Lab Exercise 4 */
+
 public class BT<T>
 {
     BTNode<T> root;
     int height;
 
-    public BT() {
+    public BT() 
+    {
         root = null;
     }
 
