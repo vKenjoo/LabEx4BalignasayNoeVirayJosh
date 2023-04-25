@@ -50,6 +50,6 @@ public class BT<T> extends BTNode<T>{
         if(height == -1)
             return "ht = undefined (tree is empty.)";
         else
-            return "ht = " + height + " " + root.toString();
+            return "ht = " + (--height) + " " + root.toString();
     }
 }
