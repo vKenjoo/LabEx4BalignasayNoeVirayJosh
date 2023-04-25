@@ -1,8 +1,8 @@
-/*Balignasay, Neo Genesis
-Viray, Josh Kenn
-ICS2605
-1CSF
-Lab Exercise 4 */
+// Balignasay, Neo Genesis
+// Viray, Josh Kenn
+// ICS2605
+// 1CSF
+// Lab Exercise 4 
 
 public class BTNode<T>{
     // Constructors
@@ -27,7 +27,7 @@ public class BTNode<T>{
         right = rightChild;
         info = data;
     }
-    
+
     //Debug Setters and getters
     public T getData() {
         return info;
