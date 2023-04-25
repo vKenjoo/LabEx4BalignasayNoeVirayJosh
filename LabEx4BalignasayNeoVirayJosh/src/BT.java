@@ -4,18 +4,15 @@ ICS2605
 1CSF
 Lab Exercise 4 */
 
-public class BT<T> extends BTNode<T>
-{
+public class BT<T> extends BTNode<T>{
     BTNode<T> root;
     int height;
 
-    public BT() 
-    {
+    public BT(){
         root = null;
     }
 
-    public void setRoot(BTNode<T> n)
-    {
+    public void setRoot(BTNode<T> n){
         root = n;
     }
 
@@ -39,12 +36,10 @@ public class BT<T> extends BTNode<T>
                 queue.enqueue(curr.right);
             }
         }
-
         return sb.toString();
     }
-
-    public String toString()
-    {
+    
+    public String toString(){
         return "h = " + height + " " + root.toString();
     }
 }
