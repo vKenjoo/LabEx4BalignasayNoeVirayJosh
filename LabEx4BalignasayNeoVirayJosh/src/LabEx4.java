@@ -5,6 +5,7 @@
 // Lab Exercise 4
 
 import java.util.Scanner;
+import java.util.logging.Level;
 
 public class LabEx4{
     static Scanner scanner = new Scanner(System.in);
@@ -31,12 +32,12 @@ public class LabEx4{
             node1.right = node2;
             node5.left = node4;
 
-            t2.setRoot(node6);
-            node6.left = node7;
-            node6.right = node8;
-            node7.left = node9;
-            node7.right = node10;
-            node8.right = node11;
+            // t2.setRoot(node6);
+            // node6.left = node7;
+            // node6.right = node8;
+            // node7.left = node9;
+            // node7.right = node10;
+            // node8.right = node11;
 
             // Print trees
             System.out.println("Tree t0:");
@@ -62,8 +63,8 @@ public class LabEx4{
             }
 
             // Print bst1
-            System.out.println("bst1: ");
-            bst1.print();
+            System.out.println("The contents of BST1 is: ");
+            System.out.println(bst1.toString());
 
             // Call search for each of the following info values in bst1
             String[] searchValues = {"A", "Q", "N", "L", "E", "C", "R"};
@@ -72,10 +73,10 @@ public class LabEx4{
                 if (foundNode != null) {
                     // If found, print the node and its level
                     System.out.println("Node found: " + search + " Level: " + foundNode.level);
-                    System.err.print(foundNode);
+                    System.out.println(foundNode);
                 } else {
                     // If not found, print the searched info and say that it is not found
-                    System.out.println("Node not found: " + search);
+                    System.out.println("\nTried finding node " + search + ", it was not found");
                 }
             }
         }
