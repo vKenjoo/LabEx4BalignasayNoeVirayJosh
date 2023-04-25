@@ -6,7 +6,7 @@ Lab Exercise 4 */
 
 public class BT<T> extends BTNode<T>{
     BTNode<T> root;
-    int height = 0;
+    int height = -1;
 
     public BT(){
         root = null;
@@ -17,38 +17,48 @@ public class BT<T> extends BTNode<T>{
     }
 
     public void computeLevels() {
-        StringBuilder sb = new StringBuilder();
         if (root == null) {
-            height = 0;
+            height = -1;
         }
 
-        else
-        {
-            Queue<BTNode<T>> queue = new Queue<BTNode<T>>(100);
-            queue.enqueue(root);
+        int height = -1;
+        boolean hasChildNodes = true;
 
-            while (!queue.isEmpty()) 
-            {
-                height++;
+        while (hasChildNodes) {
+            hasChildNodes = false;
+            BTNode<T> currentNode = root;
+            BTNode<T> leftMostNode = null;
 
-                for(int i=0; i < 100; i ++){
-                    BTNode<T> curr = queue.dequeue();
-
-                    if (curr.left != null) {
-                        queue.enqueue(curr.left);
-                    }
-                    if (curr.right != null) {
-                        queue.enqueue(curr.right);
+            while (currentNode != null) {
+                if (currentNode.left != null) {
+                    hasChildNodes = true;
+                    if (leftMostNode == null) {
+                        leftMostNode = currentNode.left;
                     }
                 }
+
+                if (currentNode.right != null) {
+                    hasChildNodes = true;
+                    if (leftMostNode == null) {
+                        leftMostNode = currentNode.right;
+                    }
+                }
+
+                currentNode = currentNode.left;
             }
+
+            if (hasChildNodes) {
+                root = leftMostNode;
+            }
+
+            height++;
         }
     }
 
     public String toString()
     {
-        if(root == null)
-            return "Tree is null";
+        if(height == -1)
+            return "Tree is empty";
         else
             return "ht = " + height + " " + root.toString();
     }
