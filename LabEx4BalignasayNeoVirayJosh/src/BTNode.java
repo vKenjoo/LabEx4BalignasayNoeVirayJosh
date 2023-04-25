@@ -4,29 +4,25 @@ ICS2605
 1CSF
 Lab Exercise 4 */
 
-public class BTNode<T>
-{
+public class BTNode<T>{
     // Constructors
     T info;
     int level;
     BTNode<T> left, right;
 
-    public BTNode()
-    {
+    public BTNode(){
         left = null;
         right = null;
         info = null;
     }
 
-    public BTNode(T data)
-    {
+    public BTNode(T data){
         left = null;
         right = null;
         info = data;
     }
 
-    public BTNode(T data, BTNode<T> leftChild, BTNode<T> rightChild)
-    {
+    public BTNode(T data, BTNode<T> leftChild, BTNode<T> rightChild){
         left = leftChild;
         right = rightChild;
         info = data;
@@ -58,26 +54,19 @@ public class BTNode<T>
     }
 
     // toString
-    public String toString()
-    {
+    public String toString(){
         String toStringValue = "";
-
         toStringValue += "[";
         toStringValue += ("K = " + info.toString());
-        if(left != null)
-        {
+        if(left != null){
             toStringValue += " L = ";
-            toStringValue += left.toString();
-            
+            toStringValue += left.toString(); 
         }
-        if(right != null)
-        {
+        if(right != null){
             toStringValue += " R = ";
             toStringValue += right.toString();
-            
         }
         toStringValue += "]";
-
         return toStringValue;
     }
 }
