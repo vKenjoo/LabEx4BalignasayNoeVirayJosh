@@ -77,6 +77,4 @@ class BST<K extends Comparable<K>> extends BT<K> {
         return null;
     }
 
-    public void print() {
-    }
 }
