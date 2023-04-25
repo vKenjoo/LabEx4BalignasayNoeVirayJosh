@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class LabEx4{
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        System.out.println("Gocon, Marc Gyronne\nViray, Josh Kenn");
+        System.out.println("Balignasay, Neo Genesis\nViray, Josh Kenn");
         System.out.print("Enter an integer t: ");
         int t = scanner.nextInt();
 
