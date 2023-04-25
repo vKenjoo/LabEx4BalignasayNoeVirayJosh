@@ -38,7 +38,6 @@ public class BT<T> extends BTNode<T>{
         }
         return sb.toString();
     }
-<<<<<<< HEAD
 
     public String toString()
     {
@@ -46,10 +45,5 @@ public class BT<T> extends BTNode<T>{
             return "Tree is null";
         else
             return "h = " + height + " " + root.toString();
-=======
-    
-    public String toString(){
-        return "h = " + height + " " + root.toString();
->>>>>>> f8989ecd62c0c2a1a7d5c28b3889fa60867bc342
     }
 }
