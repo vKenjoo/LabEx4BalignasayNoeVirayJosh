@@ -31,12 +31,28 @@ public class LabEx4{
             node1.right = node2;
             node5.left = node4;
 
-            t2.setRoot(node6);
-            node6.left = node7;
-            node6.right = node8;
-            node7.left = node9;
-            node7.right = node10;
-            node8.right = node11;
+            BTNode<Integer> nodeB = new BTNode<>(2);
+            BTNode<Integer> nodeC = new BTNode<>(4);
+            BTNode<Integer> nodeL = new BTNode<>(1);
+            BTNode<Integer> nodeE = new BTNode<>(5);
+            BTNode<Integer> nodeP = new BTNode<>(3);
+            BTNode<Integer> nodeM = new BTNode<>(2);
+            BTNode<Integer> nodeA = new BTNode<>(4);
+            BTNode<Integer> nodeU = new BTNode<>(1);
+            BTNode<Integer> nodeG = new BTNode<>(5);
+            BTNode<Integer> nodeS = new BTNode<>(3);
+            BTNode<Integer> nodeK = new BTNode<>(2);
+            BTNode<Integer> nodeF = new BTNode<>(4);
+            BTNode<Integer> nodeD = new BTNode<>(1);
+
+
+
+            // t2.setRoot(node6);
+            // node6.left = node7;
+            // node6.right = node8;
+            // node7.left = node9;
+            // node7.right = node10;
+            // node8.right = node11;
 
             // Print trees
             System.out.println("Tree t0:");

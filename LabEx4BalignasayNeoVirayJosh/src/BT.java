@@ -12,35 +12,35 @@ public class BT<T> extends BTNode<T>{
         root = null;
     }
 
-    public void setRoot(Object node6){
-        root = node6;
+    public void setRoot(BTNode<T> n){
+        root = n;
     }
 
     public void computeLevels() {
-        if (root == null) {
-            height = -1;
-        }
-        else {
-            
+        if (root != null) 
+        {
             height = 0;
 
             Queue<BTNode<T>> queue = new Queue<>(100);
             queue.enqueue(root);
         
             while (!queue.isEmpty()) {
-                BTNode<T> currNode = queue.dequeue();
-        
-                if (currNode.left != null) {
-                    queue.enqueue(currNode.left);
+                int nodesRemainingAtCurrentLevel = queue.size();
+
+                while (nodesRemainingAtCurrentLevel > 0) 
+                {
+                    BTNode<T> current = queue.dequeue();
+
+                    System.out.println("K = " +current.info + " level = " + height);
+                    if (current.left != null) {
+                        queue.enqueue(current.left);
+                    }
+                    if (current.right != null) {
+                        queue.enqueue(current.right);
+                    }
+                    nodesRemainingAtCurrentLevel--;
                 }
-        
-                if (currNode.right != null) {
-                    queue.enqueue(currNode.right);
-                }
-        
-                if (queue.isEmpty()) {
-                    height++;
-                }
+                height++;
             }
         }
     }
@@ -50,6 +50,6 @@ public class BT<T> extends BTNode<T>{
         if(height == -1)
             return "ht=undefined (tree is empty.)";
         else
-            return "ht=" + (++height) + " " + root.toString();
+            return "ht=" + (height) + " " + root.toString();
     }
 }

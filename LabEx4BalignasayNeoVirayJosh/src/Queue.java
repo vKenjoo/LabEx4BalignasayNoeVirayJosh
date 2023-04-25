@@ -6,7 +6,7 @@
 
 public class Queue<T> {
     private Object[] array;
-    private int size;
+    private int size, currentSize = 0;
     private int front = -1;
     private int rear = -1;
     
@@ -37,7 +37,9 @@ public class Queue<T> {
         } else if(rear == -1) {
             front = (rear = 0);
         } else {
-            rear++;}
+            rear++;
+        }
+        currentSize++;
         array[rear] = newItem;
     }
     
@@ -56,6 +58,7 @@ public class Queue<T> {
         } else {
             front++;
         }
+        currentSize--;
         return data;
     }
     
@@ -66,6 +69,9 @@ public class Queue<T> {
         return (T) array[front];
     }
 
-    public void offer(BTNode<T> root) {
+    public int size()
+    {
+        return currentSize;
     }
+
 } 
