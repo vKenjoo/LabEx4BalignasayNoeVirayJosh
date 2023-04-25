@@ -4,18 +4,15 @@ ICS2605
 1CSF
 Lab Exercise 4 */
 
-public class BT<T> extends BTNode<T>
-{
+public class BT<T> extends BTNode<T>{
     BTNode<T> root;
     int height = 0;
 
-    public BT() 
-    {
+    public BT(){
         root = null;
     }
 
-    public void setRoot(BTNode<T> n)
-    {
+    public void setRoot(BTNode<T> n){
         root = n;
     }
 
@@ -39,9 +36,9 @@ public class BT<T> extends BTNode<T>
                 queue.enqueue(curr.right);
             }
         }
-
         return sb.toString();
     }
+<<<<<<< HEAD
 
     public String toString()
     {
@@ -49,5 +46,10 @@ public class BT<T> extends BTNode<T>
             return "Tree is null";
         else
             return "h = " + height + " " + root.toString();
+=======
+    
+    public String toString(){
+        return "h = " + height + " " + root.toString();
+>>>>>>> f8989ecd62c0c2a1a7d5c28b3889fa60867bc342
     }
 }
