@@ -7,7 +7,7 @@ Lab Exercise 4 */
 public class BT<T> extends BTNode<T>
 {
     BTNode<T> root;
-    int height;
+    int height = 0;
 
     public BT() 
     {
@@ -45,7 +45,7 @@ public class BT<T> extends BTNode<T>
 
     public String toString()
     {
-        if(root.left == null && root.right == null)
+        if(root == null)
             return "Tree is null";
         else
             return "h = " + height + " " + root.toString();
