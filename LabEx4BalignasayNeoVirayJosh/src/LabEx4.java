@@ -95,11 +95,16 @@ public class LabEx4{
                 BTNode<String> foundNode = bst1.search(search);
                 if (foundNode != null) {
                     // If found, print the node and its level
-                    System.out.println("Node found: " + search + " Level: " + (--foundNode.level));
-                    System.out.println(foundNode);
+                    if (foundNode.level == 0){
+                        System.out.println("Node found: " + search + " Level: " + (foundNode.level));
+                        System.out.println(foundNode);
+                    } else {
+                            System.out.println("Node found: " + search + " Level: " + (--foundNode.level));
+                            System.out.println(foundNode);
+                    }
                 } else {
                     // If not found, print the searched info and say that it is not found
-                    System.out.println("\nTried finding node " + search + ", it was not found");
+                    System.out.println("Tried finding node " + search + ", it was not found");
                 }
             }
         }
