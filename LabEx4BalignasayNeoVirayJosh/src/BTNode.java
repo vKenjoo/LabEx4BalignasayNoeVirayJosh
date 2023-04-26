@@ -9,6 +9,7 @@ public class BTNode<T>{
     T info;
     int level;
     BTNode<T> left, right;
+    private T data;
 
     public BTNode(){
         left = null;
@@ -69,5 +70,9 @@ public class BTNode<T>{
         }
         toStringValue += "]";
         return toStringValue;
+    }
+
+    public String getData() {
+        return (String) data;
     }
 }

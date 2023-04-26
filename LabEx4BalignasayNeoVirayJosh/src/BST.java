@@ -1,80 +1,79 @@
-// Balignasay, Neo Genesis
-// Viray, Josh Kenn
-// ICS2605
-// 1CSF
-// Lab Exercise 4 
+public class BST<T extends Comparable<T>> extends BT<T> {
 
-class BST<K extends Comparable<K>> extends BT<K> {
-    // Insert method to add a new node with key k into the BST
-    public void insert(K k) {
-        BTNode<K> newNode = new BTNode<>(k); // Create a new node with key k
-        int level = 0; // Initialize level as 0
-
+    // Method to insert a node with info k into the BST
+    public void insert(T k) {
         if (root == null) {
-            // If the tree is empty, set newNode as the root and update height to 0
-            root = newNode;
-            height = 0;
-        } else {
-            BTNode<K> currentNode = root;
-            BTNode<K> parent;
-
-            // Traverse the tree to find the appropriate insertion point for k
-            while (true) {
-                parent = currentNode;
-                int compare = k.compareTo(currentNode.info);
-                level++;
-
-                if (compare < 0) {
-                    // If k is less than currentNode.info, move to the left child
-                    currentNode = currentNode.left;
-                    if (currentNode == null) {
-                        // If left child is null, insert newNode as left child
-                        parent.left = newNode;
-                        break;
-                    }
-                } else if (compare > 0) {
-                    // If k is greater than currentNode.info, move to the right child
-                    currentNode = currentNode.right;
-                    if (currentNode == null) {
-                        // If right child is null, insert newNode as right child
-                        parent.right = newNode;
-                        break;
-                    }
-                } else {
-                    // If k is equal to currentNode.info, do not insert duplicate key
-                    return;
-                }
-            }
+            // If the tree is empty, set the root to the new node
+            root = new BTNode<>(k);
+            height = 1;
+            return;
         }
-
-        // Update the height field of the tree if the height changes
-        if (level > height) {
-            height = level;
+        
+        // Traverse the tree to find the appropriate insertion point for k
+        BTNode<T> current = root;
+        int level = 1;
+        while (true) {
+            if (k.compareTo(current.info) < 0) {
+                if (current.left == null) {
+                    // Insert a new node with info k to the left of the current node
+                    current.left = new BTNode<>(k);
+                    current.left.level = level + 1;
+                    if (level + 1 > height) {
+                        // If the height of the tree changes, update the height field
+                        height = level + 1;
+                    }
+                    break;
+                } else {
+                    current = current.left;
+                    level += 1;
+                }
+            } else if (k.compareTo(current.info) > 0) {
+                if (current.right == null) {
+                    // Insert a new node with info k to the right of the current node
+                    current.right = new BTNode<>(k);
+                    current.right.level = level + 1;
+                    if (level + 1 > height) {
+                        // If the height of the tree changes, update the height field
+                        height = level + 1;
+                    }
+                    break;
+                } else {
+                    current = current.right;
+                    level += 1;
+                }
+            } else {
+                // If k already exists in the tree, do nothing
+                break;
+            }
         }
     }
 
-    // Search method to find a node with key k in the BST
-    public BTNode<K> search(K k) {
-        BTNode<K> currentNode = root;
-
-        // Traverse the tree to find the node with key k
-        while (currentNode != null) {
-            int compare = k.compareTo(currentNode.info);
-
-            if (compare < 0) {
-                // If k is less than currentNode.info, move to the left child
-                currentNode = currentNode.left;
-            } else if (compare > 0) {
-                // If k is greater than currentNode.info, move to the right child
-                currentNode = currentNode.right;
+    // Method to perform a BST search for info k and return the node that contains it
+    public BTNode<T> search(T k) {
+        BTNode<T> current = root;
+        while (current != null) {
+            if (k.compareTo(current.info) == 0) {
+                // If the current node contains k, return the node
+                return current;
+            } else if (k.compareTo(current.info) < 0) {
+                current = current.left;
             } else {
-                // If k is equal to currentNode.info, return the currentNode
-                return currentNode;
+                current = current.right;
             }
         }
-
-        // If k is not found, return null
+        // If k is not found in the tree, return null
         return null;
     }
 
+    public void printSubtree(BTNode<String> node) {
+        if (node != null) {
+            // Print the left subtree
+            printSubtree(node.getLeft());
+                // Print the current node's data
+            System.out.print(node.getData() + " ");
+
+            // Print the right subtree
+            printSubtree(node.getRight());
+        }
+    }
 }
