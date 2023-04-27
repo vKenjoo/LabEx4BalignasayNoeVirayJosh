@@ -8,14 +8,17 @@ public class BT<T> extends BTNode<T>{
     BTNode<T> root;
     int height = -1;
 
+    //Constructor creating an empty binary tree
     public BT(){
         root = null;
     }
 
+    //Setter for root of the tree
     public void setRoot(BTNode<T> n){
         root = n;
     }
 
+    // Computes the height of the tree; sets the height value of the tree
     public void computeLevels() {
         if (root != null) 
         {
@@ -23,7 +26,7 @@ public class BT<T> extends BTNode<T>{
 
             Queue<BTNode<T>> queue = new Queue<>(100);
             queue.enqueue(root);
-        
+
             while (!queue.isEmpty()) {
                 int nodesRemainingAtCurrentLevel = queue.size();
 
@@ -33,7 +36,6 @@ public class BT<T> extends BTNode<T>{
 
                     System.out.println("K=" +current.info + " level = " + height);
                     if (current.left != null) 
-                    
                     {
                         queue.enqueue(current.left);
                     }
@@ -47,6 +49,7 @@ public class BT<T> extends BTNode<T>{
         }
     }
 
+    // Returns the string value of the tree
     public String toString()
     {
         if(height == -1)
