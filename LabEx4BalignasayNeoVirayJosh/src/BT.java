@@ -9,12 +9,14 @@ public class BT<T> extends BTNode<T>{
     int height = -1;
 
     //Constructor creating an empty binary tree
-    public BT(){
+    public BT()
+    {
         root = null;
     }
 
     //Setter for root of the tree
-    public void setRoot(BTNode<T> n){
+    public void setRoot(BTNode<T> n)
+    {
         root = n;
     }
 
@@ -58,16 +60,19 @@ public class BT<T> extends BTNode<T>{
             return "ht=" + --height + " " + root.toString();
     }
 
-    public int countLeavesPostorder(BTNode<T> root){
-        if (root == null) {
+    public int countLeavesPostorder(BTNode<T> root)
+    {
+        if (root == null) 
+        {
             return 0;
         }
-        int leftCount = countLeavesPostorder(root.left);
-        int rightCount = countLeavesPostorder(root.right);
-        if (root.left == null && root.right == null) {
-            return 1 + leftCount + rightCount;
-        } else {
-            return leftCount + rightCount;
-        }
+
+        int currLeft = countLeavesPostorder(root.left);
+        int currRight = countLeavesPostorder(root.right);
+
+        if (root.left == null && root.right == null) 
+            return 1 + currLeft + currRight;
+        else 
+            return currLeft + currRight;
     }
 }
