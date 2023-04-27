@@ -21,7 +21,8 @@ public class BT<T> extends BTNode<T>{
     }
 
     // Computes the height of the tree; sets the height value of the tree
-    public void computeLevels() {
+    public void computeLevels() 
+    {
         if (root != null) 
         {
             height = 0;
@@ -29,21 +30,20 @@ public class BT<T> extends BTNode<T>{
             Queue<BTNode<T>> queue = new Queue<>(100);
             queue.enqueue(root);
 
-            while (!queue.isEmpty()) {
+            while (!queue.isEmpty()) 
+            {
                 int nodesRemainingAtCurrentLevel = queue.size();
 
                 while (nodesRemainingAtCurrentLevel > 0) 
                 {
                     BTNode<T> current = queue.dequeue();
-
                     System.out.println("K=" +current.info + " level = " + height);
+
                     if (current.left != null) 
-                    {
                         queue.enqueue(current.left);
-                    }
-                    if (current.right != null) {
+                    if (current.right != null) 
                         queue.enqueue(current.right);
-                    }
+
                     nodesRemainingAtCurrentLevel--;
                 }
                 height++;
