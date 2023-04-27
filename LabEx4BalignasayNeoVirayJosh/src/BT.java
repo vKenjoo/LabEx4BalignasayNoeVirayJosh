@@ -1,8 +1,8 @@
-/*Balignasay, Neo Genesis
-Viray, Josh Kenn
-ICS2605
-1CSF
-Lab Exercise 4 */
+// Balignasay, Neo Genesis
+// Viray, Josh Kenn
+// ICS2605
+// 1CSF
+// Lab Exercise 4
 
 public class BT<T> extends BTNode<T>{
     BTNode<T> root;
@@ -16,7 +16,7 @@ public class BT<T> extends BTNode<T>{
         root = n;
     }
 
-    public void computeLevels() {
+    public void computeLevels(){
         if (root != null) 
         {
             height = 0;
@@ -24,7 +24,7 @@ public class BT<T> extends BTNode<T>{
             Queue<BTNode<T>> queue = new Queue<>(100);
             queue.enqueue(root);
         
-            while (!queue.isEmpty()) {
+            while (!queue.isEmpty()){
                 int nodesRemainingAtCurrentLevel = queue.size();
 
                 while (nodesRemainingAtCurrentLevel > 0) 
@@ -47,15 +47,14 @@ public class BT<T> extends BTNode<T>{
         }
     }
 
-    public String toString()
-    {
+    public String toString(){
         if(height == -1)
             return "ht = undefined (tree is empty.)";
         else
             return "ht=" + --height + " " + root.toString();
     }
 
-    public int countLeavesPostorder(BTNode<T> root) {
+    public int countLeavesPostorder(BTNode<T> root){
         if (root == null) {
             return 0;
         }

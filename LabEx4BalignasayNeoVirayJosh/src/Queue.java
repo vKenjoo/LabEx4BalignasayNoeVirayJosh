@@ -27,12 +27,12 @@ public class Queue<T> {
         return (rear + 1) % size == front;
     }
     
-    public void enqueue(T newItem){
+    public void enqueue(T newItem) {
         if(isFull()){ 
             throw new RuntimeException("Cannot enqueue because the queue is full " + front + " " + rear);
         } 
         
-        if(rear == size - 1){
+        if(rear == size - 1) {
             rear = 0;
         } else if(rear == -1) {
             front = (rear = 0);
@@ -69,9 +69,7 @@ public class Queue<T> {
         return (T) array[front];
     }
 
-    public int size()
-    {
+    public int size(){
         return currentSize;
     }
-
 } 

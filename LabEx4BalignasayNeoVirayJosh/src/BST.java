@@ -1,3 +1,9 @@
+// Balignasay, Neo Genesis
+// Viray, Josh Kenn
+// ICS2605
+// 1CSF
+// Lab Exercise 4
+
 public class BST<T extends Comparable<T>> extends BT<T> {
 
     // Method to insert a node with info k into the BST
@@ -8,7 +14,6 @@ public class BST<T extends Comparable<T>> extends BT<T> {
             height = 1;
             return;
         }
-        
         // Traverse the tree to find the appropriate insertion point for k
         BTNode<T> current = root;
         int level = 1;
@@ -47,7 +52,6 @@ public class BST<T extends Comparable<T>> extends BT<T> {
             }
         }
     }
-
     // Method to perform a BST search for info k and return the node that contains it
     public BTNode<T> search(T k) {
         BTNode<T> current = root;
@@ -69,9 +73,8 @@ public class BST<T extends Comparable<T>> extends BT<T> {
         if (node != null) {
             // Print the left subtree
             printSubtree(node.getLeft());
-                // Print the current node's data
+            // Print the current node's data
             System.out.print(node.getData() + " ");
-
             // Print the right subtree
             printSubtree(node.getRight());
         }
