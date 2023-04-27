@@ -75,16 +75,12 @@ public class LabEx4 extends BT{
             t2.computeLevels();
             System.out.println(t2.toString());
 
-            BTNode bNode = t2.getNodeWithValue(nodeB, "M");
             int bLeaves = countLeavesPostorder(nodeB);
             System.out.println("B: " + bLeaves);
-            BTNode eNode = t2.getNodeWithValue(nodeE, "M");
             int eLeaves = countLeavesPostorder(nodeE);
             System.out.println("E: " + eLeaves);
-            BTNode gNode = t2.getNodeWithValue(nodeG, "M");
             int gLeaves = countLeavesPostorder(nodeG);
             System.out.println("G: " + gLeaves);
-            BTNode mNode = t2.getNodeWithValue(nodeM, "M");
             int mLeaves = countLeavesPostorder(nodeM);
             System.out.println("M: " + mLeaves);
         }

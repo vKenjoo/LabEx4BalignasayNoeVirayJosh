@@ -67,22 +67,4 @@ public class BT<T> extends BTNode<T>{
             return leftCount + rightCount;
         }
     }
-
-    public BTNode getNodeWithValue(BTNode root, String string) {
-        if (root == null) {
-            return null;
-        }
-        if (root.info.equals(string)) {
-            return root;
-        }
-        BTNode leftResult = getNodeWithValue(root.left, string);
-        if (leftResult != null) {
-            return leftResult;
-        }
-        BTNode rightResult = getNodeWithValue(root.right, string);
-        if (rightResult != null) {
-            return rightResult;
-        }
-        return null;
-    }
 }
