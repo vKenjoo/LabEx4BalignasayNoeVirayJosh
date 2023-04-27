@@ -6,7 +6,7 @@
 
 import java.util.Scanner;
 
-public class LabEx4{
+public class LabEx4 extends BT{
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("Balignasay, Neo Genesis\nViray, Josh Kenn");
@@ -74,6 +74,22 @@ public class LabEx4{
             System.out.println("Tree t2:");
             t2.computeLevels();
             System.out.println(t2.toString());
+
+            BTNode bNode = t2.getNodeWithValue(bNode, "B");
+            int bLeaves = countLeavesPostorder(bNode);
+            System.out.println("B: " + bLeaves);
+
+            BTNode eNode = t2.getNodeWithValue(eNode, "E");
+            int eLeaves = countLeavesPostorder(eNode);
+            System.out.println("E: " + eLeaves);
+
+            BTNode gNode = t2.getNodeWithValue(gNode, "G");
+            int gLeaves = countLeavesPostorder(gNode);
+            System.out.println("G: " + gLeaves);
+
+            BTNode mNode = t2.getNodeWithValue(mNode, "M");
+            int mLeaves = countLeavesPostorder(mNode);
+            System.out.println("M: " + mLeaves);
         }
 
         if (t==2){

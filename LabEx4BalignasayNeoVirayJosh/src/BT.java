@@ -55,16 +55,34 @@ public class BT<T> extends BTNode<T>{
             return "ht=" + --height + " " + root.toString();
     }
 
-    public int countLeavesPostorder(BTNode left) {
-        if (left == null) {
+    public static int countLeavesPostorder(BTNode root) {
+        if (root == null) {
             return 0;
         }
-        int leftCount = countLeavesPostorder(left.left);
-        int rightCount = countLeavesPostorder(left.right);
-        if (left.left == null && left.right == null) {
+        int leftCount = countLeavesPostorder(root.left);
+        int rightCount = countLeavesPostorder(root.right);
+        if (root.left == null && root.right == null) {
             return 1 + leftCount + rightCount;
         } else {
             return leftCount + rightCount;
         }
+    }
+
+    public BTNode getNodeWithValue(BTNode root, String value) {
+        if (root == null) {
+            return null;
+        }
+        if (root.info.equals(value)) {
+            return root;
+        }
+        BTNode leftResult = getNodeWithValue(root.left, value);
+        if (leftResult != null) {
+            return leftResult;
+        }
+        BTNode rightResult = getNodeWithValue(root.right, value);
+        if (rightResult != null) {
+            return rightResult;
+        }
+        return null;
     }
 }
