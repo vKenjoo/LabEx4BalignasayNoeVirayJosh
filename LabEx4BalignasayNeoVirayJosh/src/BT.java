@@ -68,18 +68,18 @@ public class BT<T> extends BTNode<T>{
         }
     }
 
-    public BTNode getNodeWithValue(BTNode root, String value) {
+    public BTNode getNodeWithValue(BTNode root, String string) {
         if (root == null) {
             return null;
         }
-        if (root.info.equals(value)) {
+        if (root.info.equals(string)) {
             return root;
         }
-        BTNode leftResult = getNodeWithValue(root.left, value);
+        BTNode leftResult = getNodeWithValue(root.left, string);
         if (leftResult != null) {
             return leftResult;
         }
-        BTNode rightResult = getNodeWithValue(root.right, value);
+        BTNode rightResult = getNodeWithValue(root.right, string);
         if (rightResult != null) {
             return rightResult;
         }
