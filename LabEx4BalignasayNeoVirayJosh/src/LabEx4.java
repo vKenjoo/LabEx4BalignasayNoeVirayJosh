@@ -6,7 +6,7 @@
 
 import java.util.Scanner;
 
-public class LabEx4 extends BT{
+public class LabEx4{
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("Balignasay, Neo Genesis\nViray, Josh Kenn");
@@ -75,13 +75,13 @@ public class LabEx4 extends BT{
             t2.computeLevels();
             System.out.println(t2.toString());
 
-            int bLeaves = countLeavesPostorder(nodeB);
+            int bLeaves = t2.countLeavesPostorder(nodeB);
             System.out.println("B: " + bLeaves);
-            int eLeaves = countLeavesPostorder(nodeE);
+            int eLeaves = t2.countLeavesPostorder(nodeE);
             System.out.println("E: " + eLeaves);
-            int gLeaves = countLeavesPostorder(nodeG);
+            int gLeaves = t2.countLeavesPostorder(nodeG);
             System.out.println("G: " + gLeaves);
-            int mLeaves = countLeavesPostorder(nodeM);
+            int mLeaves = t2.countLeavesPostorder(nodeM);
             System.out.println("M: " + mLeaves);
         }
 

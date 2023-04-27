@@ -55,7 +55,7 @@ public class BT<T> extends BTNode<T>{
             return "ht=" + --height + " " + root.toString();
     }
 
-    public static int countLeavesPostorder(BTNode root) {
+    public int countLeavesPostorder(BTNode root) {
         if (root == null) {
             return 0;
         }
