@@ -61,7 +61,7 @@ public class BT<T> extends BTNode<T>{
         int leftCount = countLeavesPostorder(root.left);
         int rightCount = countLeavesPostorder(root.right);
         if (root.left == null && root.right == null) {
-            return 1 + leftCount + rightCount;
+            return 1;
         } else {
             return leftCount + rightCount;
         }
