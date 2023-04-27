@@ -9,49 +9,19 @@ public class BTNode<T>{
     T info;
     int level;
     BTNode<T> left, right;
-    private T data;
 
-    public BTNode(){
+    public BTNode()
+    {
         left = null;
         right = null;
         info = null;
     }
 
-    public BTNode(T data){
+    public BTNode(T data)
+    {
         left = null;
         right = null;
         info = data;
-    }
-
-    public BTNode(T data, BTNode<T> leftChild, BTNode<T> rightChild){
-        left = leftChild;
-        right = rightChild;
-        info = data;
-    }
-    //Debug Setters and getters
-
-    public T info() {
-        return info;
-    }
-
-    public void setInfo(T data) {
-        this.info = data;
-    }
-
-    public BTNode<T> getLeft() {
-        return left;
-    }
-
-    public void setLeft(BTNode<T> left) {
-        this.left = left;
-    }
-
-    public BTNode<T> getRight() {
-        return right;
-    }
-
-    public void setRight(BTNode<T> right) {
-        this.right = right;
     }
 
     // toString
@@ -60,11 +30,13 @@ public class BTNode<T>{
         String toStringValue = "";
         toStringValue += "[";
         toStringValue += ("K=" + info.toString());
-        if(left != null){
+        if(left != null)
+        {
             toStringValue += " L=";
             toStringValue += left.toString(); 
         }
-        if(right != null){
+        if(right != null)
+        {
             toStringValue += " R=";
             toStringValue += right.toString();
         }
@@ -72,7 +44,4 @@ public class BTNode<T>{
         return toStringValue;
     }
 
-    public String getData() {
-        return (String) data;
-    }
 }

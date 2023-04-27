@@ -8,12 +8,14 @@ import java.util.Scanner;
 
 public class LabEx4{
     static Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         System.out.println("Balignasay, Neo Genesis\nViray, Josh Kenn");
         System.out.print("Enter an integer t: ");
         int t = scanner.nextInt();
 
-        if (t == 1) {
+        if (t == 1) 
+        {
             // Build test trees t0, t1, and t2
             BTNode<Integer> node2 = new BTNode<>(2);
             BTNode<Integer> node4 = new BTNode<>(4);
@@ -85,14 +87,14 @@ public class LabEx4{
             System.out.println("M: " + mLeaves);
         }
 
-        if (t==2){
+        if (t==2)
+        {
             BST<String> bst1 = new BST<>();
 
             // Call insert for each of the following info values to insert them into bst1
             String[] infoValues = {"L", "C", "G", "K", "X", "H", "Q", "U", "W", "P", "M", "E"};
-            for (String info : infoValues) {
+            for (String info : infoValues) 
                 bst1.insert(info);
-            }
 
             // Print bst1
             System.out.println("The contents of BST1 is: ");
@@ -100,18 +102,25 @@ public class LabEx4{
 
             // Call search for each of the following info values in bst1
             String[] searchValues = {"A", "Q", "N", "L", "E", "C", "R"};
-            for (String search : searchValues) {
+            for (String search : searchValues) 
+            {
                 BTNode<String> foundNode = bst1.search(search);
-                if (foundNode != null) {
+                if (foundNode != null) 
+                {
                     // If found, print the node and its level
-                    if (foundNode.level == 0){
+                    if (foundNode.level == 0)
+                    {
                         System.out.println("Node found: " + search + " Level: " + (foundNode.level));
                         System.out.println(foundNode);
-                    } else {
+                    } 
+                    else 
+                    {
                             System.out.println("Node found: " + search + " Level: " + (--foundNode.level));
                             System.out.println(foundNode);
                     }
-                } else {
+                } 
+                else 
+                {
                     // If not found, print the searched info and say that it is not found
                     System.out.println("Tried finding node " + search + ", it was not found");
                 }

@@ -8,11 +8,13 @@ public class BT<T> extends BTNode<T>{
     BTNode<T> root;
     int height = -1;
 
-    public BT(){
+    public BT()
+    {
         root = null;
     }
 
-    public void setRoot(BTNode<T> n){
+    public void setRoot(BTNode<T> n)
+    {
         root = n;
     }
 
@@ -46,24 +48,28 @@ public class BT<T> extends BTNode<T>{
             }
         }
     }
-
-    public String toString(){
+    // Returns string of the tree with correct ofrmat of left and right children
+    public String toString()
+    {
         if(height == -1)
             return "ht = undefined (tree is empty.)";
         else
             return "ht=" + --height + " " + root.toString();
     }
 
-    public int countLeavesPostorder(BTNode<T> root){
-        if (root == null) {
+    // Leaf counter for nodeRoot (chosen node)
+    public int countLeavesPostorder(BTNode<T> nodeRoot)
+    {
+        if (nodeRoot == null) 
             return 0;
-        }
-        int leftCount = countLeavesPostorder(root.left);
-        int rightCount = countLeavesPostorder(root.right);
-        if (root.left == null && root.right == null) {
+
+        int ctrLeft = countLeavesPostorder(nodeRoot.left);
+        int ctrRight = countLeavesPostorder(nodeRoot.right);
+        
+        if (nodeRoot.left == null && nodeRoot.right == null) 
             return 1;
-        } else {
-            return leftCount + rightCount;
-        }
+        else 
+            return ctrLeft + ctrRight;
+
     }
 }
